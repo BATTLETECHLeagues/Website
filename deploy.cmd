@@ -2,7 +2,7 @@
 echo Handling node.js deployment.
  
 :: 1. KuduSync
-echo Begin Sync and more
+echo Begin Sync
 IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
   call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"  
   IF !ERRORLEVEL! NEQ 0 goto error
@@ -46,3 +46,14 @@ endlocal
 echo An error has occurred during web site deployment.
 call :exitSetErrorLevel
 call :exitFromFunction 2>nul
+
+
+:exitSetErrorLevel
+exit /b 1
+
+:exitFromFunction
+()
+
+:end
+endlocal
+echo Finished successfully.
