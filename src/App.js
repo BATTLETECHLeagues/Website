@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import LoginText from './login';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -18,7 +19,7 @@ class App extends Component {
       </button>
       <a className="navbar-brand" href="#">Solaris 7 Operations</a>
     </div>        
-         <p className="navbar-text navbar-right">Signed in as <a href="#" className="navbar-link">Mark Otto</a></p>
+        <LoginText/>
         </div>
       </nav>
       <div className="container">
@@ -30,6 +31,7 @@ class App extends Component {
           <p className="App-intro">
            To get started, edit <code>src/App.js</code> and save to reload.
           </p>
+            
         </div>
       </div>
     </div>
