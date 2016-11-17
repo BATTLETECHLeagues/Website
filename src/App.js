@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import LoginText from './login';
+import LoginText from './LoginText';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Router, Route, Link, browserHistory } from 'react-router';
+import About from './About';
+import Home from './Home';
+import Login from './Login';
 
 class App extends Component {
   render() {
@@ -23,17 +27,14 @@ class App extends Component {
         </div>
       </nav>
       <div className="container">
-        <div >
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-          </div>
-          <p className="App-intro">
-           To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+      
+      <Router history={browserHistory}>
+        <Route path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+        <Route path="/login" component={Login}/>    
+     </Router>
+    </div>
             
-        </div>
-      </div>
     </div>
     );
   }
