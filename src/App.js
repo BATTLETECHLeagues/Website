@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import About from './About';
 import Home from './Home';
-import Login from './Login';
+import Login from './login';
 
 class App extends Component {
   render() {
