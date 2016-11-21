@@ -7,6 +7,7 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import About from './About';
 import Home from './Home';
 import Login from './login';
+import Register from './Register';
 
 class App extends Component {
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
       </button>
-      <a className="navbar-brand" href="#">Solaris 7 Operations</a>
+      <a className="navbar-brand" href="./">Solaris 7 Operations</a>
     </div>        
         <LoginText/>
         </div>
@@ -31,7 +32,8 @@ class App extends Component {
       <Router history={browserHistory}>
         <Route path="/" component={Home}/>
         <Route path="/about" component={About}/>
-        <Route path="/login" component={Login}/>    
+        <Route path="/login" component={Login}/>
+        <Route path="/register" component={Register}/>    
      </Router>
     </div>
             

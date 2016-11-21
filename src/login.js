@@ -14,14 +14,14 @@ class Login extends React.Component {
         <div className="col-md-4">
           <section className="login-form">
             <div><p>Note site is not secured in any meaningful fashion</p></div>
-            <form method="post" action="#" role="login">
-              <input type="email" name="email" placeholder="Email" required className="form-control input-lg" defaultValue="joestudent@gmail.com" />
+            <form method="post" action="#" role="login" onSubmit={this.handleSubmit}>
+              <input type="email" name="email" placeholder="email@domainname.com" required className="form-control input-lg" />
             {/* Add in password at a later date 
               <input type="password" className="form-control input-lg" id="password" placeholder="Password" required />*/}
               <div className="pwstrength_viewport_progress" />
               <button type="submit" name="go" className="btn btn-lg btn-primary btn-block">Sign in</button>
               <div>
-                <a href="#">Create account</a> or <a href="#">reset password</a>
+                <a href="./Register">Create account</a>{/*} or <a href="#">reset password</a>*/}
               </div>
             </form>
           </section>  
@@ -32,5 +32,11 @@ class Login extends React.Component {
     );
   
   }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ');
+    event.preventDefault();
+  }
+
 };
 export default Login;
