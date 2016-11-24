@@ -8,7 +8,7 @@ class Home extends React.Component {
         {/* Heading Row */}
         <div className="row">
           <div className="col-md-8">
-            <img className="img-responsive img-rounded" src="http://placehold.it/900x350" alt />
+            <img className="img-responsive img-rounded" src="./mechwarriros_frontpage.png" alt />
           </div>
           {/* /.col-md-8 */}
           <div className="col-md-4">
@@ -16,7 +16,7 @@ class Home extends React.Component {
             <p>Solaris 7 Operations is an unofficial site for coordinating pvp based combat for the soon to be released 
             BATTLETECH turnbased mech combat game.</p>
             <p></p>
-            <a className="btn btn-primary btn-lg" href="https://battletech.backerkit.com/">Back BATTLETECH here</a>
+            <a className="btn btn-primary btn-lg" href="https://battletech.backerkit.com/hosted_preorders">Back BATTLETECH here</a>
           </div>
           {/* /.col-md-4 */}
         </div>

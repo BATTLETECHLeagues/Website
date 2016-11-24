@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import About from './About';
 import Home from './Home';
-import Login from './login';
-import Register from './Register';
+import Login from './User/login';
+import Register from './User/Register';
 
 class App extends Component {
   render() {
