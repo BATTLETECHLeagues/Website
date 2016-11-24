@@ -36,7 +36,16 @@ class App extends Component {
         <Route path="/register" component={Register}/>    
      </Router>
     </div>
-            
+   <footer>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <p>This content on this website is released under the     
+                <a href="https://creativecommons.org/"> Creative Commons</a></p>
+            </div>
+          </div>
+        </div>
+      </footer> 
     </div>
     );
   }
