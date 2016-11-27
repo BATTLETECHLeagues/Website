@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import cookie from 'react-cookie'; 
 
 class Register extends React.Component {
       constructor(props) {
     super(props);
+    this.state = {value: ''};
+    this.state =  { userId: cookie.load('userId') };
+ 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);  
   }
 
   render() {
@@ -15,7 +21,7 @@ class Register extends React.Component {
           <section className="login-form">
             <div><p>Note site is not secured in any meaningful fashion</p></div>
             <form method="post" action="#" role="login" onSubmit={this.handleSubmit}>
-              <input type="email" name="email" placeholder="email@domainname.com" required className="form-control input-lg" />
+              <input type="email" name="email" placeholder="email@example.com" required className="form-control input-lg" value={this.state.value} onChange={this.handleChange} />
             {/* Add in password at a later date 
               <input type="password" className="form-control input-lg" id="password" placeholder="Password" required />*/}
               <div className="pwstrength_viewport_progress" />
@@ -30,8 +36,14 @@ class Register extends React.Component {
   
   }
 
+    handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
   handleSubmit(event) {
-    alert('A name was submitted: ');
+    cookie.save('userId', this.state.value, { path: '/' });
+    alert('A name was submitted: ' + cookie.load('userId'));
+    
     event.preventDefault();
   }
 
