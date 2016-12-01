@@ -1,3 +1,5 @@
+var baseApiUrl = "http://battletechleaguesapi.azurewebsites.net/";
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import LoginText from './LoginText';
@@ -10,6 +12,22 @@ import Login from './User/login';
 import Register from './User/Register';
 
 class App extends Component {
+   constructor ()
+   {
+     super()
+        this.state = {date: new Date(),version: new String()};
+   }
+
+   componentDidMount() {
+        fetch(baseApiUrl + "/api/systemdetails")
+            .then( (response) => {
+                return response.json() })   
+                    .then( (json) => {
+                        var version = json.Version.Major + "." + json.Version.Minor + "." + json.Version.Revision
+                        this.setState({version: version});
+                    });
+   }
+
   render() {
     return (
     <div className="App">
@@ -42,6 +60,7 @@ class App extends Component {
             <div className="col-lg-12">
               <p>This content on this website is released under the     
                 <a href="https://creativecommons.org/"> Creative Commons</a></p>
+                <p>Site version is {this.state.version} </p>
             </div>
           </div>
         </div>
