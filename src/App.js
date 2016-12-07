@@ -1,4 +1,3 @@
-var baseApiUrl = "http://battletechleaguesapi.azurewebsites.net/";
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -19,6 +18,21 @@ class App extends Component {
    }
 
    componentDidMount() {
+
+      var host = window.location.hostname;
+      var baseApiUrl = "No Url";
+
+      if(host === 'localhost') {
+          //is development
+          baseApiUrl = "http://localhost:64179"
+      } else {
+        baseApiUrl = "http://battletechleaguesapi.azurewebsites.net/"
+          // is production
+      }
+
+      console.log(baseApiUrl);
+      console.log(host);
+
         fetch(baseApiUrl + "/api/systemdetails")
             .then( (response) => {
                 return response.json() })   
