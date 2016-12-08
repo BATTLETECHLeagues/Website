@@ -9,6 +9,7 @@ import About from './About';
 import Home from './Home';
 import Login from './User/login';
 import Register from './User/Register';
+import ApiUrl from './apiUrl';
 
 class App extends Component {
    constructor ()
@@ -19,19 +20,10 @@ class App extends Component {
 
    componentDidMount() {
 
-      var host = window.location.hostname;
-      var baseApiUrl = "No Url";
-
-      if(host === 'localhost') {
-          //is development
-          baseApiUrl = "http://localhost:64179"
-      } else {
-        baseApiUrl = "http://battletechleaguesapi.azurewebsites.net/"
-          // is production
-      }
+      var baseApiUrl = new ApiUrl().getBase();
 
       console.log(baseApiUrl);
-      console.log(host);
+  
 
         fetch(baseApiUrl + "/api/systemdetails")
             .then( (response) => {
