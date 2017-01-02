@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cookie from 'react-cookie'; 
+import ApiUrl from '.././apiUrl';
 
 class Register extends React.Component {
       constructor(props) {
@@ -21,7 +22,7 @@ class Register extends React.Component {
           <section className="login-form">
             <div><p>Note: Site will be secured in 90 days</p></div>
             <form method="post" action="#" role="login" onSubmit={this.handleSubmit}>
-              <input type="email" name="email" placeholder="email@example.com" required className="form-control input-lg" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" name="userName" placeholder="User Name" required className="form-control input-lg" value={this.state.value} onChange={this.handleChange} />
             {/* Add in password at a later date 
               <input type="password" className="form-control input-lg" id="password" placeholder="Password" required />*/}
               <div className="pwstrength_viewport_progress" />
@@ -41,9 +42,25 @@ class Register extends React.Component {
   }
 
   handleSubmit(event) {
+
+    var baseApiUrl = new ApiUrl().getBase();
     cookie.save('userId', this.state.value, { path: '/' });
-    alert('A name was submitted: ' + cookie.load('userId'));
     
+    var payload = {
+      UserName: this.state.value,
+    };
+
+    fetch(baseApiUrl + '/api/user',
+    {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'      
+      },
+      body: JSON.stringify( payload )
+    })
+  .then(function(res){ return res.json(); })
+  .then(function(data){ alert( JSON.stringify( data ) ) })
+
     event.preventDefault();
   }
 
