@@ -15,7 +15,7 @@ class Login extends React.Component {
           <section className="login-form">
             <div><p>Note: Site will be secured in 90 days</p></div>
             <form method="post" action="#" role="login" onSubmit={this.handleSubmit}>
-              <input type="email" name="email" placeholder="email@example.com" required className="form-control input-lg" />
+              <input type="text" name="userName" placeholder="User Name" required className="form-control input-lg" />
             {/* Add in password at a later date 
               <input type="password" className="form-control input-lg" id="password" placeholder="Password" required />*/}
               <div className="pwstrength_viewport_progress" />

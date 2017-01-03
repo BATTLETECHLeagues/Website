@@ -35,33 +35,40 @@ class Home extends React.Component {
         {/* Content Row */}
         <div className="row">
           <div className="col-md-4">
-            <h2>Lance V Lance Combat</h2>
-            <p>Setup a round robin lance v lance combat league for 3-6 players.  Players play each to determine league table standings.</p>
+            <div className="row">
+              <h2>Lance V Lance Combat</h2>
+              <p>Setup a round robin lance v lance combat league for 3-6 players.  Players play each to determine league table standings.</p>
+            </div>
+            <div className="row ">
+              <a className="btn btn-default" href="#">More Info</a>
+            </div>
+                        
           </div>
           {/* /.col-md-4 */}
           <div className="col-md-4">
-            <h2>Company V Company</h2>
-            <p>Setup multi player company v company combat. Control territory to win the match.</p><p></p>
+            <div className="row">          
+              <h2>Company V Company</h2>
+              <p>Setup multi player company v company combat. Control territory to win the match.</p><p></p>
+            </div>
+            <div className="row ">
+              <a className="btn btn-default" href="#">More Info</a>
+            </div>
+            
           </div>
           {/* /.col-md-4 */}
           <div className="col-md-4">
-            <h2>Extended Campaign</h2>
-            <p>Coming soon an extended campaign to capture objectives and control resources that can be used through the campaign</p>
+            <div className="row ">          
+              <h2>Extended Campaign</h2>
+              <p>Coming soon an extended campaign to capture objectives and control resources that can be used through the campaign</p>
+            </div>
+            <div className="row ">
+              <a className="btn btn-default" href="#">More Info</a>
+            </div>
+            
           </div>
           {/* /.col-md-4 */}
         </div>
         {/* /.row */}
-        <div className="row">
-          <div className="col-md-4">
-            <a className="btn btn-default" href="#">More Info</a>
-          </div>
-          <div className="col-md-4">
-            <a className="btn btn-default" href="#">More Info</a>          
-          </div>
-          <div className="col-md-4">
-            <a className="btn btn-default" href="#">More Info</a>          
-          </div>        
-        </div>
 
            {/* /.container */} </div> 
 
