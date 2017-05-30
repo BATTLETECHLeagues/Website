@@ -48,7 +48,7 @@ class App extends Component {
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
       </button>
-      <a className="navbar-brand" href="./">Solaris 7 Operations</a>
+      <a className="navbar-brand" href="/">Solaris 7 Operations</a>
     </div>        
         <LoginText/>
         </div>
