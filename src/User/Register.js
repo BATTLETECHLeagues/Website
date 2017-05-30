@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import cookie from 'react-cookie'; 
 import ApiUrl from '.././apiUrl';
+import Cookie from '.././cookie';
 
 class Register extends React.Component {
       constructor(props) {
     super(props);
     this.state = {value: ''};
-    this.state =  { userId: cookie.load('userId') };
  
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);  
@@ -44,7 +43,6 @@ class Register extends React.Component {
   handleSubmit(event) {
 
     var baseApiUrl = new ApiUrl().getBase();
-    cookie.save('userId', this.state.value, { path: '/' });
     
     var payload = {
       UserName: this.state.value,
@@ -59,7 +57,13 @@ class Register extends React.Component {
       body: JSON.stringify( payload )
     })
   .then(function(res){ return res.json(); })
-  .then(function(data){ alert( JSON.stringify( data ) ) })
+  .then(function(data){ 
+    if (data.OperationSuccess === 'true')
+    {
+      new Cookie().createCookie('BATTLETECHSessionKey',data.SessionKey,30);
+    }
+    alert( JSON.stringify( data ) )
+   })
 
     event.preventDefault();
   }
