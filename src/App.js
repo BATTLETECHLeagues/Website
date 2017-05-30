@@ -9,6 +9,7 @@ import About from './About';
 import Home from './Home';
 import Login from './User/login';
 import Logout from './User/logout';
+import LanceVLance from './GameModes/lance-v-lance'
 import Register from './User/Register';
 import ApiUrl from './apiUrl';
 
@@ -58,6 +59,8 @@ class App extends Component {
         <Route path="/" component={Home}/>
         <Route path="/about" component={About}/>
         <Route path="/login" component={Login}/>
+        <Route path="/logout" component={Logout}/>
+        <Route path="/game-modes/lance-v-lance" component={LanceVLance}/>
         <Route path="/register" component={Register}/>    
      </Router>
     </div>

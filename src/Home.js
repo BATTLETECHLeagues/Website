@@ -37,10 +37,10 @@ class Home extends React.Component {
           <div className="col-md-4">
             <div className="row">
               <h2>Lance V Lance Combat</h2>
-              <p>Setup a round robin lance v lance combat league for 3-6 players.  Players play each to determine league table standings.</p>
+              <p>Setup a round robin lance v lance combat league for 2-6 players.  Players play each to determine league table standings.</p>
             </div>
             <div className="row ">
-              <a className="btn btn-default" href="#">More Info</a>
+              <a className="btn btn-default" href="./game-modes/lance-v-lance">More Info</a>
             </div>
                         
           </div>
