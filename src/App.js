@@ -8,6 +8,7 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import About from './About';
 import Home from './Home';
 import Login from './User/login';
+import Logout from './User/logout';
 import Register from './User/Register';
 import ApiUrl from './apiUrl';
 
