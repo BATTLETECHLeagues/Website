@@ -23,7 +23,7 @@ class LanceVLance extends React.Component {
         <div className="row">
           <div className="col-lg-12">
             <div className="well text-center">
-                <a href="./Login">Create</a> a tournament today.
+                <a href="./lance-v-lance/create">Create</a> a tournament today.
             </div>
           </div>
           {/* /.col-lg-12 */}
