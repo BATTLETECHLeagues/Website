@@ -1,5 +1,5 @@
 import React from 'react'
-import Welcome from './lance-list'
+import LanceList from './lance-list'
 
 class CreateLanceVLance extends React.Component {
   render() {
@@ -41,7 +41,7 @@ class CreateLanceVLance extends React.Component {
         </div>
         <div className="row">
             <div className="col-lg-5">
-                <Welcome name='Sara'/> 
+                <LanceList name='Sara'/> 
                 
              <div/>
         </div>

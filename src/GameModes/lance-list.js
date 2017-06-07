@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Welcome extends React.Component {
+class LanceList extends React.Component {
   constructor() {
     super();
     this.listValue=[1,2,3,4,5];
@@ -37,4 +37,4 @@ class Welcome extends React.Component {
 
 }
 
-export default Welcome;
+export default LanceList;
